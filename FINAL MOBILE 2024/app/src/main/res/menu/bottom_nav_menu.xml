@@ -6,9 +6,14 @@
         android:title="Home"
         android:iconTint="@color/white"/>
     <item
-        android:id="@+id/searchbtn"
+        android:id="@+id/favoritebtn"
         android:icon="@drawable/btn_2"
         android:title="Favorite"
+        android:iconTint="@color/white"/>
+    <item
+        android:id="@+id/searchbtn"
+        android:icon="@drawable/btn_3"
+        android:title="Search"
         android:iconTint="@color/white"/>
     <item
         android:id="@+id/profilebtn"

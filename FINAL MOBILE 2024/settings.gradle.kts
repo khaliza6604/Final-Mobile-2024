@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Final Web 2024"
+rootProject.name = "Final Mobile 2024"
 include(":app")
  

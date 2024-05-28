@@ -44,8 +44,7 @@
                     <ImageView
                         android:id="@+id/img_cover"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_user_edit">
+                        android:layout_height="wrap_content">
 
                     </ImageView>
 
@@ -67,8 +66,8 @@
 
                         <TextView
                             android:id="@+id/tv_titleBookitle"
-                            android:layout_width="77dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="144dp"
+                            android:layout_height="55dp"
                             android:text="Tittle"
                             android:textColor="#f4c0b4"
                             android:textSize="18sp"
@@ -80,33 +79,36 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />
 
+
                         <TextView
                             android:id="@+id/tv_publisher"
                             android:layout_width="78dp"
                             android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_publisher"
                             android:text="publisher"
                             android:textColor="#f4c0b4"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.384"
+                            app:layout_constraintHorizontal_bias="0.716"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />
-
 
                         <TextView
                             android:id="@+id/tv_author"
                             android:layout_width="78dp"
                             android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_author"
                             android:text="author"
                             android:textColor="#f4c0b4"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_bias="0.716"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.328" />
 
                         <TextView
                             android:id="@+id/tv_bookRank"
@@ -130,7 +132,7 @@
                             android:src="@drawable/btn_delete"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.934"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />

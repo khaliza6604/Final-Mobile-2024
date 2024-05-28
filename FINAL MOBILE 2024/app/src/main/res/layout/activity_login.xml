@@ -11,11 +11,17 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="176dp"
+        android:layout_height="235dp"
+        android:layout_below="@+id/btn_logout"
+        android:src="@drawable/armin" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="70dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/custome_et"
         app:cardCornerRadius="30dp"

@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
     private void loginSuccess(int userId) {
         SharedPreferences sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("userId", userId);
+        editor.putInt("user_id", userId);
         editor.apply();
     }
 }

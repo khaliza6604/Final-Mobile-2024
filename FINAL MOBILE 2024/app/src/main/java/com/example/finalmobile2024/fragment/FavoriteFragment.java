@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,14 +59,19 @@ public class FavoriteFragment extends Fragment {
         service = ApiConfig.getClient().create(ApiService.class);
 
         dbConfig = new DbConfig(requireActivity());
-        preferences = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE);
+        preferences = requireActivity().getSharedPreferences("login_prefs", Context.MODE_PRIVATE);
         int userId = preferences.getInt("user_id", 0);
 
+        Log.d("FavoriteFragment", String.valueOf(userId));
+
         Cursor cursor = dbConfig.getFavoriteBooksByUserId(userId);
+        Log.d("FavoriteFragment", cursor.moveToFirst() ? "Cursor move to first" : "Cursot not move");
         ArrayList<String> favoritesBookIsbn = new ArrayList<>();
         if (cursor.moveToFirst()) {
+            Log.d("FavoriteFragment", cursor.moveToFirst() ? "Cursor move to first" : "Cursot not move");
             do {
                 String bookIsbn = cursor.getString(cursor.getColumnIndexOrThrow(DbConfig.COLUMN_BOOK_ID));
+                Log.d("FavoriteFragment", bookIsbn);
                 favoritesBookIsbn.add(bookIsbn);
             } while (cursor.moveToNext());
         }
@@ -88,6 +94,7 @@ public class FavoriteFragment extends Fragment {
                             List<BookModel> favoriteBooks = new ArrayList<>();
                             for (BookModel book : bookModels) {
                                 if (favoritesBookIsbn.contains(book.getBookIsbn())) {
+//                                    Log.d("FavoriteFragment", book.getBookTitle());
                                     favoriteBooks.add(book);
                                 }
                             }

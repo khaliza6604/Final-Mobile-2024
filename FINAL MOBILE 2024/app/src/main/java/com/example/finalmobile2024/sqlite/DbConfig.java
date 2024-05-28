@@ -158,7 +158,6 @@ public class DbConfig extends SQLiteOpenHelper {
                 new String[]{String.valueOf(userId), bookIsbn}, null, null, null);
     }
 
-
     public void deleteFavorite(int userId, int bookId) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(FAVORITES_TABLE_NAME, COLUMN_USER_ID + " = ? AND " + COLUMN_BOOK_ID + " = ?", new String[]{String.valueOf(userId), String.valueOf(bookId)});

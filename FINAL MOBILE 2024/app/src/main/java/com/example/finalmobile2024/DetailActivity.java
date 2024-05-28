@@ -24,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private DbConfig dbConfig;
     private BookAdapter bookAdapter;
+    private ImageView btn_back;
     private boolean isFavorite;
     RecyclerView recomdRc;
 
@@ -41,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView tvRank = findViewById(R.id.tv_bookRank);
         ImageView ivImage = findViewById(R.id.img_poster);
         ImageView ivLove = findViewById(R.id.btn_favorite);
+        btn_back = findViewById(R.id.btn_back);
         recomdRc = findViewById(R.id.recommendationView);
 
         BookModel bookModel = getIntent().getParcelableExtra("bookModel");
@@ -60,6 +62,10 @@ public class DetailActivity extends AppCompatActivity {
                 ivLove.setEnabled(false);
                 ivLove.setImageResource(R.drawable.love);
             }
+
+            btn_back.setOnClickListener(v -> {
+                finish();
+            });
 
             ivLove.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -106,7 +112,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private int getLoggedInUserId() {
         SharedPreferences sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE);
-        return sharedPreferences.getInt("userId", -1);
+        return sharedPreferences.getInt("user_id", -1);
     }
 
     private void saveFavoriteBook(int userId, String bookId) {

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.finalweb2024"
+    namespace = "com.example.finalmobile2024"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.finalweb2024"
+        applicationId = "com.example.finalmobile2024"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
@@ -37,4 +37,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
+
 }
