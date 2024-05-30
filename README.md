@@ -69,7 +69,7 @@ Disarankan agar pengguna melengkapi data yang kurang di halaman profil, seperti 
 # Software/Pendukung Aplikasi
 
 * SQLite : digunakan untuk menyimpan data pengguna dan informasi terkait aplikasi lainnya.
-* Retrofit : untuk pengambilan [API] (https://rapidapi.com/yoginoit39/api/all-books-api/)
+* Retrofit : untuk pengambilan https://rapidapi.com/yoginoit39/api/all-books-api/
 * Androdi Studio : untuk pengembangan Aplikasi
 * Lottie : Untuk progressbar
 
