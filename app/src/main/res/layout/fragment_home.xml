@@ -69,15 +69,14 @@
                     android:id="@+id/tv_welccometo"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="16dp"
+                    android:layout_margin="5dp"
                     android:background="@drawable/edittext_background"
                     android:drawablePadding="8dp"
-                    android:text="Welcome To ReadMe!"
-                    android:textStyle="bold"
                     android:inputType="text"
                     android:padding="12dp"
-                    android:textColor="#FFF2F2">
-                </TextView>
+                    android:text="Welcome To ReadMe!"
+                    android:textColor="#FFF2F2"
+                    android:textStyle="bold"></TextView>
 
             </LinearLayout>
 
@@ -89,6 +88,7 @@
                     android:id="@+id/viewpagerSlider"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:paddingStart="60dp"
                     android:paddingEnd="60dp"
                     app:layout_constraintBottom_toBottomOf="parent"
