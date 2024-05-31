@@ -59,6 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         btn_roadMore = findViewById(R.id.btn_readMore);
 
 
+
         btn_back.setOnClickListener(v -> {
             finish();
         });

@@ -60,15 +60,15 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cv_info_book"
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
+                        android:layout_height="90dp"
                         android:layout_centerInParent="true"
                         android:orientation="vertical">
 
 
                         <TextView
                             android:id="@+id/tv_titleBookitle"
-                            android:layout_width="172dp"
-                            android:layout_height="59dp"
+                            android:layout_width="280dp"
+                            android:layout_height="63dp"
                             android:text="Tittle"
                             android:textColor="#f4c0b4"
                             android:textSize="18sp"
@@ -83,37 +83,39 @@
 
                         <TextView
                             android:id="@+id/tv_publisher"
-                            android:layout_width="78dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="109dp"
+                            android:layout_height="22dp"
+                            android:drawableStart="@drawable/detail_publisher"
                             android:text="publisher"
                             android:textColor="#f4c0b4"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.836"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
+                            app:layout_constraintVertical_bias="1.0" />
 
                         <TextView
                             android:id="@+id/tv_author"
-                            android:layout_width="78dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="109dp"
+                            android:layout_height="22dp"
+                            android:drawableStart="@drawable/detail_author"
                             android:text="author"
                             android:textColor="#f4c0b4"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.836"
+                            app:layout_constraintHorizontal_bias="0.372"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.242" />
+                            app:layout_constraintVertical_bias="1.0" />
 
                         <TextView
                             android:id="@+id/tv_bookRank"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/star"
+                            android:drawableStart="@drawable/rank"
                             android:drawablePadding="5dp"
                             android:text="0"
                             android:textColor="#F4C0B4"
@@ -122,23 +124,11 @@
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.983" />
+                            app:layout_constraintVertical_bias="1.0" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/tv_youfavorite"
-                    android:layout_width="153dp"
-                    android:layout_height="wrap_content"
-                    android:text="You Favorite Book!"
-                    android:layout_marginLeft="100dp"
-                    android:textColor="#f4c0b4"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
-
-                </TextView>
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </FrameLayout>

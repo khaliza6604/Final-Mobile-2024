@@ -89,7 +89,6 @@ public class HomeFragment extends Fragment {
         }
     }
 
-
     private void loadBooks() {
         homeLoadingView2.setVisibility(View.VISIBLE);
         ApiService apiService = ApiConfig.getClient().create(ApiService.class);

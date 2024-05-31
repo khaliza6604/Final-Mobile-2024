@@ -74,7 +74,7 @@ public class SearchFragment extends Fragment {
                     if (response.isSuccessful() && response.body() != null) {
                         homeLoadingView.setVisibility(View.GONE);
                         List<BookModel> bookModels = new ArrayList<>();
-                        bookModels.add(response.body());
+                        bookModels.add(response.body()); // Respon berhasil, data buku ditemukan
                         bookAdapter = new BookAdapter(bookModels, getContext());
                         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
                         recyclerView.setAdapter(bookAdapter);

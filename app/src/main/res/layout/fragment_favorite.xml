@@ -33,30 +33,28 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0">
 
-                <EditText
+                <TextView
                     android:id="@+id/btn_search"
                     android:layout_width="307dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:background="@drawable/edittext_background"
-                    android:drawableStart="@drawable/star"
+                    android:drawableStart="@drawable/like"
+                    android:textColor="@color/white"
                     android:drawablePadding="8dp"
-                    android:ems="10"
-                    android:hint="Your Favorites are Here!"
-                    android:inputType="text"
-                    android:padding="12dp"
-                    android:textColorHint="@color/white">
+                    android:text="Your Favorites are Here!"
+                    android:padding="12dp">
 
-                </EditText>
+                </TextView>
 
                 <ImageView
                     android:id="@+id/btn_favorite"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/oval_btn_background"
-                    android:padding="8dp"
-                    android:src="@drawable/fav" />
+                    android:padding="7dp"
+                    android:src="@drawable/like" />
 
             </LinearLayout>
             <androidx.constraintlayout.widget.ConstraintLayout

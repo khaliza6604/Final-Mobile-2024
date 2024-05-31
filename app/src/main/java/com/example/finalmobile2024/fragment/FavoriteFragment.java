@@ -54,6 +54,9 @@ public class FavoriteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Digunakan untuk menginisialisasi elemen UI, service API, konfigurasi database, dan
+        // preferensi pengguna ketika view fragmen telah dibuat.
+
         favoritLoadingView = view.findViewById(R.id.home_loading_view);
         recyclerView = view.findViewById(R.id.tc_result);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -69,19 +72,22 @@ public class FavoriteFragment extends Fragment {
         loadFavoriteBooks();
     }
 
-    @Override
+    @Override // Memastikan buku favorit dimuat ulang setiap kali fragmen menjadi aktif.
     public void onResume() {
         super.onResume();
         loadFavoriteBooks();
+        // Dipanggil di kedua metode untuk memastikan data terbaru
+        // ditampilkan setiap kali view dibuat atau fragmen menjadi aktif.
     }
 
     private void loadFavoriteBooks() {
         Cursor cursor = dbConfig.getFavoriteBooksByUserId(userId);
-        Log.d("FavoriteFragment", cursor.moveToFirst() ? "Cursor move to first" : "Cursor not move");
+        Log.d("FavoriteFragment", cursor.moveToFirst() ? "Cursor move to first" : "Cursor doesnt move");
         ArrayList<String> favoritesBookIsbn = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
                 String bookIsbn = cursor.getString(cursor.getColumnIndexOrThrow(DbConfig.COLUMN_BOOK_ID));
+                // Mendapatkan indeks (posisi) dari kolom yang bernama COLUMN_BOOK_ID dalam tabel database.
                 Log.d("FavoriteFragment", bookIsbn);
                 favoritesBookIsbn.add(bookIsbn);
             } while (cursor.moveToNext());
@@ -93,25 +99,25 @@ public class FavoriteFragment extends Fragment {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
-        executor.execute(() -> {
+        executor.execute(() -> { // agar tidak memblokir main thread
             Call<List<BookModel>> call = service.getBookAll();
             call.enqueue(new Callback<List<BookModel>>() {
                 @Override
                 public void onResponse(@NonNull Call<List<BookModel>> call, @NonNull Response<List<BookModel>> response) {
                     if (response.isSuccessful() && isAdded()) {
-                        List<BookModel> bookModels = response.body();
-                        List<BookModel> favoriteBooks = new ArrayList<>();
-                        if (bookModels != null) {
+                        List<BookModel> bookModels = response.body(); // berisi daftar buku.
+                        List<BookModel> favoriteBooks = new ArrayList<>(); // menyimpan buku favorit.
+                        if (bookModels != null) { // memastikan  daftar buku tidak null.
                             for (BookModel book : bookModels) {
                                 if (favoritesBookIsbn.contains(book.getBookIsbn())) {
-                                    favoriteBooks.add(book);
+                                    favoriteBooks.add(book);  // menambah buku ketika isbn cocok
                                 }
                             }
                         }
                         favoritAdapter = new FavoritAdapter(getParentFragmentManager(), favoriteBooks, userId);
                         recyclerView.setAdapter(favoritAdapter);
 
-                        handler.post(() -> {
+                        handler.post(() -> { //perubahan pada tampilan dilakukan di thread UI utama.
                             favoritLoadingView.setVisibility(View.GONE);
                             if (favoriteBooks.isEmpty()) {
                                 recyclerView.setVisibility(View.GONE);

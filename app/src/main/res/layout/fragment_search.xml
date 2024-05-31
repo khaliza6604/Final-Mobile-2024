@@ -41,7 +41,7 @@
                     android:drawableStart="@drawable/search"
                     android:drawablePadding="8dp"
                     android:ems="10"
-                    android:hint="Search Movies..."
+                    android:hint="Search Books..."
                     android:inputType="text"
                     android:padding="12dp"
                     android:textColorHint="@color/white">
@@ -70,7 +70,8 @@
                 <include
                     android:id="@+id/search_loading_view"
                     layout="@layout/loading"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 

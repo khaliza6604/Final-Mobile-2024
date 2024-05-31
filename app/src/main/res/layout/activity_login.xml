@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/whale_bg"
-    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -74,7 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#F4C0B4"
+                android:backgroundTint="#F3DED8"
+                android:textColor="#DD9D87"
                 android:text="Login"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />

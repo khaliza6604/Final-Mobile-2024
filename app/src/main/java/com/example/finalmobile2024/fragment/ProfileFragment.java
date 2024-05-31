@@ -112,7 +112,7 @@ public class ProfileFragment extends Fragment {
 
     private void logoutUser() {
         try (SQLiteDatabase db = dbConfig.getWritableDatabase()) {
-            dbConfig.updateRecord(recordId, 0); // Mengubah status pengguna menjadi logged out
+            dbConfig.updateRecord(recordId, 0); // Mengubah status pengguna menjadi logged out (di logcat berubah 0)
         }
 
         if (isAdded()) {

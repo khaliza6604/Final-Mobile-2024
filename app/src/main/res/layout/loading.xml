@@ -6,8 +6,8 @@
     android:gravity="center">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="104dp"
-        android:layout_height="97dp"
+        android:layout_width="141dp"
+        android:layout_height="121dp"
         android:layout_centerInParent="true"
         android:src="@drawable/loading" />
 
